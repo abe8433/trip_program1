@@ -7,11 +7,11 @@ puts <<~TEXT
 
      TEXT
 
-plan_name1 = "沖縄旅行"
+plan_name1 = "沖縄"
 plan_price1 = 10000
-plan_name2 = "北海道旅行"
+plan_name2 = "北海道"
 plan_price2 = 20000
-plan_name3 = "九州旅行"
+plan_name3 = "九州"
 plan_price3 = 15000
 
 DISCOUNT_STANDARD_VALUE = 5
@@ -27,17 +27,17 @@ end
 
 case select_plan_num
 when 1
-  chosen_plan = plan_name1
-  chosen_price = plan_price1
+  name = plan_name1
+  price = plan_price1
 when 2
-  chosen_plan = plan_name2
-  chosen_price = plan_price2
+  name = plan_name2
+  price = plan_price2
 when 3
-  chosen_plan = plan_name3
-  chosen_price = plan_price3
+  name = plan_name3
+  price = plan_price3
 end
 
-puts "#{chosen_plan}ですね。\n 何名で予約されますか？"
+puts "#{name}旅行ですね。\n何名で予約されますか？"
 while true
   print "人数を入力 > "
   number_of_people = gets.to_i
@@ -46,7 +46,7 @@ while true
 end
 
 puts "#{number_of_people}名ですね"
-total_price = chosen_price * number_of_people
+total_price = price * number_of_people
 if number_of_people >= DISCOUNT_STANDARD_VALUE
   puts "#{DISCOUNT_STANDARD_VALUE}名以上なので#{(DISCOUNT_RATE*100).floor}%割引となります"
   total_price *= AFTER_DISCOUNT_RATE 
